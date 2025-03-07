@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -85,7 +86,7 @@ const barChartData = {
   ],
 };
 
-export default function RefugeeImpactChart() {
+const RefugeeImpactChart: React.FC = () => {
   return (
     <div className="bg-gray-900 p-6 rounded-lg">
       <div className="flex justify-between items-center mb-4">
@@ -128,4 +129,6 @@ export default function RefugeeImpactChart() {
       </div>
     </div>
   );
-} 
+};
+
+export default RefugeeImpactChart; 
