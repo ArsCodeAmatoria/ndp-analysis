@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -12,7 +12,8 @@ import {
   MentalHealthSection,
   OverspendingSection,
   ReconciliationSection,
-  ChildCrimeSection
+  ChildCrimeSection,
+  PopulationExodusSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -88,6 +89,10 @@ export default function Home() {
             <Shield size={18} className="mr-2" stroke="#f97316" />
             <span>Child Safety Crisis</span>
           </a>
+          <a href="#population-exodus" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <LogOut size={18} className="mr-2" stroke="#f97316" />
+            <span>Population Exodus</span>
+          </a>
         </div>
 
         {/* Crime Chart Section */}
@@ -104,6 +109,9 @@ export default function Home() {
 
         {/* Child Crime Section */}
         <ChildCrimeSection />
+
+        {/* Population Exodus Section */}
+        <PopulationExodusSection />
 
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
@@ -239,6 +247,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Child Safety Crisis</h3>
               </div>
               <p className="text-gray-300">Child safety incidents increased by <span className="text-orange-500 font-bold">156%</span> following policy changes, while prosecution rates fell by <span className="text-orange-500 font-bold">43%</span></p>
+            </div>
+
+            {/* Population Exodus Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <LogOut size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Population Exodus</h3>
+              </div>
+              <p className="text-gray-300">BC has lost <span className="text-orange-500 font-bold">90,100+</span> residents to other provinces since 2019, with <span className="text-orange-500 font-bold">4,800+</span> businesses closing or relocating</p>
             </div>
           </div>
         </section>

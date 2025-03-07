@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { Users, Building } from 'lucide-react';
 
 // Dynamically import chart components with no SSR
 const CrimeChart = dynamic(() => import('@/components/charts/CrimeChart'), { ssr: false });
@@ -8,6 +9,7 @@ const DrugChart = dynamic(() => import('@/components/charts/DrugChart'), { ssr: 
 const HealthcareChart = dynamic(() => import('@/components/charts/HealthcareChart'), { ssr: false });
 const HousingChart = dynamic(() => import('@/components/charts/HousingChart'), { ssr: false });
 const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'), { ssr: false });
+const PopulationExodusChart = dynamic(() => import('@/components/charts/PopulationExodusChart'), { ssr: false });
 
 // Advanced charts
 const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
@@ -714,6 +716,129 @@ export function ChildCrimeSection() {
           </div>
           <p className="text-gray-300 text-sm">
             These recommendations should be implemented within the next 6 months, with priority given to background checks and parental notification requirements. A comprehensive review should be conducted after 12 months to assess effectiveness and make necessary adjustments.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PopulationExodusSection() {
+  return (
+    <section className="mb-12" id="population-exodus">
+      <h2 className="text-3xl font-bold mb-6">Population & Business Exodus</h2>
+      <p className="mb-6 text-gray-300">
+        British Columbia is experiencing an unprecedented exodus of residents and businesses to other provinces, driven by policy failures that have made the province increasingly unaffordable and inhospitable to economic growth.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">90,100+</span>
+          <p className="text-gray-300">Net residents lost to other provinces since 2019</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">4,800+</span>
+          <p className="text-gray-300">Businesses closed or relocated since 2017</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$1.87B</span>
+          <p className="text-gray-300">Estimated annual tax revenue loss</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Users size={20} stroke="#f97316" className="mr-2" />
+            Population Exodus Factors
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Housing Affordability Crisis</h4>
+                <p className="text-sm text-gray-300">Average home prices 43% higher than 2017, with rental costs up 38%, forcing families to relocate to more affordable provinces.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Tax Burden</h4>
+                <p className="text-sm text-gray-300">BC residents face among the highest combined tax rates in Canada, with 12 new or increased taxes since 2017.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Public Safety Concerns</h4>
+                <p className="text-sm text-gray-300">Rising crime rates and public drug use have made urban centers increasingly unsafe, particularly for families with children.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Building size={20} stroke="#f97316" className="mr-2" />
+            Business Exodus Factors
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Regulatory Burden</h4>
+                <p className="text-sm text-gray-300">BC businesses face 25% more regulatory requirements than Alberta, with compliance costs estimated at $5.7B annually.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Labor Shortages</h4>
+                <p className="text-sm text-gray-300">Critical worker shortages as skilled labor leaves the province, with 78% of businesses reporting difficulty filling positions.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Operating Costs</h4>
+                <p className="text-sm text-gray-300">Energy costs, commercial rent, and employer health tax have increased operating expenses by an average of 32% since 2017.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Population Exodus Chart */}
+      <PopulationExodusChart />
+      
+      <div className="bg-gray-900 p-6 rounded-lg mt-8">
+        <h3 className="text-xl font-bold mb-4">Economic Impact</h3>
+        <p className="mb-4 text-gray-300">
+          The combined exodus of residents and businesses has created a cascading economic effect, with reduced consumer spending, declining tax revenues, and diminished investment. This has led to budget shortfalls despite record tax increases, creating a negative economic spiral that further accelerates the exodus.
+        </p>
+        <div className="bg-orange-600/10 p-4 rounded-lg border border-orange-600/30">
+          <h4 className="font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Critical Concern
+          </h4>
+          <p className="text-sm text-gray-300">
+            If current trends continue, BC is projected to lose an additional 120,000 residents and 6,500 businesses by 2026, potentially creating a $3.2B annual tax revenue shortfall that would severely impact public services and infrastructure maintenance.
           </p>
         </div>
       </div>
