@@ -1,6 +1,6 @@
 /* Critical styles for orange elements */
 header.bg-orange-600 {
-  background-color: #f97316 !important;
+  background-color: #ea580c !important; /* Darker orange (orange-700) */
 }
 .text-orange-500, .text-orange-600 {
   color: #f97316 !important;
