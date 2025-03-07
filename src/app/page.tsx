@@ -1,17 +1,23 @@
 import Image from "next/image";
-import { HousingChartSection, EconomicChartSection } from "@/components/ChartSection";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase } from "lucide-react";
+import { 
+  CrimeChartSection, 
+  DrugChartSection, 
+  HealthcareChartSection, 
+  HousingChartSection, 
+  EconomicChartSection 
+} from "@/components/ChartSections";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
-      <header className="bg-orange-600 text-white p-4">
+      <header className="bg-orange-600 text-white p-4 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">BC Policy Analysis</h1>
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               <li><a href="#" className="hover:underline">Home</a></li>
-              <li><a href="#" className="hover:underline">Analysis</a></li>
+              <li><a href="#key-findings" className="hover:underline">Key Findings</a></li>
               <li><a href="#" className="hover:underline">About</a></li>
             </ul>
           </nav>
@@ -27,102 +33,57 @@ export default function Home() {
         </section>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Crime Crisis</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Immigration Impact</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Drug Epidemic</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Gang Activity</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Housing Crisis</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Healthcare Collapse</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Corruption Cases</a>
-          <a href="#" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors">Economic Decline</a>
+          <a href="#crime-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <AlertTriangle size={18} className="mr-2" stroke="#f97316" />
+            <span>Crime Crisis</span>
+          </a>
+          <a href="#immigration-impact" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Users size={18} className="mr-2" stroke="#f97316" />
+            <span>Immigration Impact</span>
+          </a>
+          <a href="#drug-epidemic" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Pill size={18} className="mr-2" stroke="#f97316" />
+            <span>Drug Epidemic</span>
+          </a>
+          <a href="#gang-activity" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Users size={18} className="mr-2" stroke="#f97316" />
+            <span>Gang Activity</span>
+          </a>
+          <a href="#housing-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <HomeIcon size={18} className="mr-2" stroke="#f97316" />
+            <span>Housing Crisis</span>
+          </a>
+          <a href="#healthcare-collapse" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Clock size={18} className="mr-2" stroke="#f97316" />
+            <span>Healthcare Collapse</span>
+          </a>
+          <a href="#corruption-cases" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Building size={18} className="mr-2" stroke="#f97316" />
+            <span>Corruption Cases</span>
+          </a>
+          <a href="#economic-decline" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Briefcase size={18} className="mr-2" stroke="#f97316" />
+            <span>Economic Decline</span>
+          </a>
         </div>
 
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">Public Safety Crisis</h2>
-          <p className="mb-6 text-gray-300">
-            Under NDP governance, British Columbia has experienced an unprecedented rise in crime rates, with violent offenses reaching historic highs in major urban centers.
-          </p>
+        {/* Crime Chart Section */}
+        <CrimeChartSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">37%</span>
-              <p className="text-gray-300">Increase in violent crime since 2017</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">52%</span>
-              <p className="text-gray-300">Rise in property crime in Vancouver</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">41%</span>
-              <p className="text-gray-300">Increase in random stranger attacks</p>
-            </div>
-          </div>
+        {/* Drug Chart Section */}
+        <DrugChartSection />
 
-          <div className="bg-gray-900 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold mb-4">Catch and Release Justice System</h3>
-            <p className="mb-4 text-gray-300">
-              The NDP's "catch and release" approach to criminal justice has resulted in repeat offenders cycling through the system with minimal consequences, endangering public safety.
-            </p>
-            <div className="space-y-4">
-              <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="mb-2">Over 40% of violent offenders in Vancouver had 10+ prior convictions at time of arrest.</p>
-                <p className="text-sm text-gray-400">Source: Vancouver Police Department, 2023</p>
-              </div>
-              <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="mb-2">The average prolific offender in BC is released back into the community within 2.5 days of arrest.</p>
-                <p className="text-sm text-gray-400">Source: BC Prosecution Service</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Housing Chart Section (Client Component) */}
+        {/* Housing Chart Section */}
         <HousingChartSection />
 
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold mb-6">Drug Crisis Escalation</h2>
-          <p className="mb-6 text-gray-300">
-            The NDP's approach to drug decriminalization has coincided with a dramatic increase in public drug use, overdose deaths, and associated crime.
-          </p>
+        {/* Healthcare Chart Section */}
+        <HealthcareChartSection />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">2,511</span>
-              <p className="text-gray-300">Overdose deaths in 2023 alone</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">316%</span>
-              <p className="text-gray-300">Increase in public drug use incidents</p>
-            </div>
-            <div className="bg-gray-900 p-6 rounded-lg text-center">
-              <span className="text-4xl font-bold text-orange-500 block mb-2">189%</span>
-              <p className="text-gray-300">Rise in drug-related property crime</p>
-            </div>
-          </div>
-
-          <div className="bg-gray-900 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold mb-4">Failed Decriminalization Experiment</h3>
-            <p className="mb-4 text-gray-300">
-              The NDP's decriminalization policy has turned public spaces into open-air drug scenes while failing to provide adequate treatment options.
-            </p>
-            <div className="space-y-4">
-              <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="mb-2">Only 2,800 treatment beds available for an estimated 125,000+ problematic drug users in BC.</p>
-                <p className="text-sm text-gray-400">Source: BC Centre on Substance Use</p>
-              </div>
-              <div className="bg-gray-800 p-4 rounded-lg">
-                <p className="mb-2">78% of businesses in downtown Vancouver report negative impacts from public drug use.</p>
-                <p className="text-sm text-gray-400">Source: Vancouver Business Improvement Association</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Economic Chart Section (Client Component) */}
+        {/* Economic Chart Section */}
         <EconomicChartSection />
 
         {/* Enhanced Key Findings Section */}
-        <section className="mb-12">
+        <section className="mb-12" id="key-findings">
           <h2 className="text-3xl font-bold mb-8 text-center">Key Findings</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
