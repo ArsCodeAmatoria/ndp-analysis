@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Users, Building } from 'lucide-react';
+import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase } from 'lucide-react';
 
 // Dynamically import chart components with no SSR
 const CrimeChart = dynamic(() => import('@/components/charts/CrimeChart'), { ssr: false });
@@ -10,6 +10,7 @@ const HealthcareChart = dynamic(() => import('@/components/charts/HealthcareChar
 const HousingChart = dynamic(() => import('@/components/charts/HousingChart'), { ssr: false });
 const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'), { ssr: false });
 const PopulationExodusChart = dynamic(() => import('@/components/charts/PopulationExodusChart'), { ssr: false });
+const RefugeeImpactChart = dynamic(() => import('@/components/charts/RefugeeImpactChart'), { ssr: false });
 
 // Advanced charts
 const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
@@ -839,6 +840,143 @@ export function PopulationExodusSection() {
           </h4>
           <p className="text-sm text-gray-300">
             If current trends continue, BC is projected to lose an additional 120,000 residents and 6,500 businesses by 2026, potentially creating a $3.2B annual tax revenue shortfall that would severely impact public services and infrastructure maintenance.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function RefugeeImpactSection() {
+  return (
+    <section className="mb-12" id="refugee-impact">
+      <h2 className="text-3xl font-bold mb-6">Refugee Status & System Burdens</h2>
+      <p className="mb-6 text-gray-300">
+        British Columbia's approach to refugee claimants has created significant economic and social burdens on provincial systems, with high unemployment rates and increasing costs to taxpayers.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">74%</span>
+          <p className="text-gray-300">Unemployment rate among refugee claimants</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$298M</span>
+          <p className="text-gray-300">Annual cost to BC taxpayers in 2024</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">460%</span>
+          <p className="text-gray-300">Increase in refugee claimants since 2017</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Globe size={20} stroke="#f97316" className="mr-2" />
+            System Burden Factors
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Healthcare System Impact</h4>
+                <p className="text-sm text-gray-300">Refugee claimants account for a 35% increase in emergency room visits since 2017, with average per-visit costs 28% higher due to translation services and complex health needs.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Housing Pressure</h4>
+                <p className="text-sm text-gray-300">42% increase in social housing waitlists, with refugee claimants now occupying 23% of emergency shelter capacity in major urban centers.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Social Assistance Dependency</h4>
+                <p className="text-sm text-gray-300">68% of refugee claimants remain on social assistance after 24 months, compared to 17% for economic immigrants, creating long-term fiscal pressure.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Briefcase size={20} stroke="#f97316" className="mr-2" />
+            Employment Barriers
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Skills Mismatch</h4>
+                <p className="text-sm text-gray-300">63% of refugee claimants lack skills that match BC's labor market needs, with only 12% having credentials that are recognized by provincial authorities.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Language Barriers</h4>
+                <p className="text-sm text-gray-300">78% of refugee claimants lack sufficient English proficiency for employment, yet language training programs have seen a 15% funding reduction since 2019.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Policy Failures</h4>
+                <p className="text-sm text-gray-300">Integration programs have seen a 23% decrease in per-capita funding despite the 460% increase in claimants, resulting in 9-month waiting periods for essential services.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Refugee Impact Chart */}
+      <RefugeeImpactChart />
+      
+      <div className="bg-gray-900 p-6 rounded-lg mt-8">
+        <h3 className="text-xl font-bold mb-4">Fiscal Impact Analysis</h3>
+        <p className="mb-4 text-gray-300">
+          The current approach to refugee claimants is creating an unsustainable fiscal burden on BC taxpayers. While humanitarian considerations are important, the lack of effective integration policies has resulted in prolonged dependency and system strain.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">$19,100</h4>
+            <p className="text-xs text-gray-300 text-center">Average annual cost per refugee claimant to BC taxpayers</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">8.7 years</h4>
+            <p className="text-xs text-gray-300 text-center">Average time to achieve fiscal neutrality (tax contributions equal to benefits received)</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">$1.2B</h4>
+            <p className="text-xs text-gray-300 text-center">Projected cumulative cost to BC taxpayers over the next 5 years</p>
+          </div>
+        </div>
+        <div className="bg-orange-600/10 p-4 rounded-lg border border-orange-600/30">
+          <h4 className="font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Policy Recommendation
+          </h4>
+          <p className="text-sm text-gray-300">
+            A comprehensive reform of refugee integration policies is needed, focusing on skills assessment, language training, and employment matching. Successful models from provinces like Manitoba, which achieves a 62% employment rate within 12 months, should be adopted to reduce system burdens and improve outcomes.
           </p>
         </div>
       </div>

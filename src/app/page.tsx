@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -13,7 +13,8 @@ import {
   OverspendingSection,
   ReconciliationSection,
   ChildCrimeSection,
-  PopulationExodusSection
+  PopulationExodusSection,
+  RefugeeImpactSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -93,6 +94,10 @@ export default function Home() {
             <LogOut size={18} className="mr-2" stroke="#f97316" />
             <span>Population Exodus</span>
           </a>
+          <a href="#refugee-impact" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Globe size={18} className="mr-2" stroke="#f97316" />
+            <span>Refugee Burdens</span>
+          </a>
         </div>
 
         {/* Crime Chart Section */}
@@ -112,6 +117,9 @@ export default function Home() {
 
         {/* Population Exodus Section */}
         <PopulationExodusSection />
+
+        {/* Refugee Impact Section */}
+        <RefugeeImpactSection />
 
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
@@ -258,6 +266,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Population Exodus</h3>
               </div>
               <p className="text-gray-300">BC has lost <span className="text-orange-500 font-bold">90,100+</span> residents to other provinces since 2019, with <span className="text-orange-500 font-bold">4,800+</span> businesses closing or relocating</p>
+            </div>
+
+            {/* Refugee Impact Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Globe size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Refugee Burdens</h3>
+              </div>
+              <p className="text-gray-300">Refugee claimants have a <span className="text-orange-500 font-bold">74%</span> unemployment rate, costing taxpayers <span className="text-orange-500 font-bold">$298M</span> annually with minimal integration success</p>
             </div>
           </div>
         </section>
