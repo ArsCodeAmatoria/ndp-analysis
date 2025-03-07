@@ -1,0 +1,19 @@
+/* Critical styles for orange elements */
+header.bg-orange-600 {
+  background-color: #f97316 !important;
+}
+.text-orange-500, .text-orange-600 {
+  color: #f97316 !important;
+}
+.border-orange-600 {
+  border-color: #f97316 !important;
+}
+.bg-orange-600 {
+  background-color: #f97316 !important;
+}
+.bg-orange-600\/20 {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+}
+[stroke="#f97316"] {
+  stroke: #f97316 !important;
+} 
