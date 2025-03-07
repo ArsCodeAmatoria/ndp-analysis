@@ -15,6 +15,9 @@ const BCRegionalHeatmap = dynamic(() => import('@/components/charts/BCRegionalHe
 const BudgetSankeyChart = dynamic(() => import('@/components/charts/BudgetSankeyChart'), { ssr: false });
 const ImmigrationScatterChart = dynamic(() => import('@/components/charts/ImmigrationScatterChart'), { ssr: false });
 const OrganizedCrimeNetworkChart = dynamic(() => import('@/components/charts/OrganizedCrimeNetworkChart'), { ssr: false });
+const ChurchBurningsChart = dynamic(() => import('@/components/charts/ChurchBurningsChart'), { ssr: false });
+const MentalHealthChart = dynamic(() => import('@/components/charts/MentalHealthChart'), { ssr: false });
+const OverspendingChart = dynamic(() => import('@/components/charts/OverspendingChart'), { ssr: false });
 
 export function CrimeChartSection() {
   return (
@@ -284,6 +287,180 @@ export function OrganizedCrimeSection() {
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="mb-2 text-sm">Specialized anti-gang units saw a 23% reduction in funding while $18.5 million was allocated to DEI programs within law enforcement agencies.</p>
             <p className="text-xs text-gray-400">Source: BC Ministry of Public Safety Budget Analysis, 2023</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ChurchBurningsSection() {
+  return (
+    <section className="mb-12" id="church-burning-crisis">
+      <h2 className="text-3xl font-bold mb-6">Church Burning & Religious Targeting Crisis</h2>
+      <p className="mb-6 text-gray-300">
+        Since 2017, British Columbia has experienced an alarming rise in church burnings, vandalism, and religious hate crimes, 
+        with government response often muted or delayed depending on which communities are targeted.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">169</span>
+          <p className="text-gray-300">Church burnings/vandalism since 2017</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">467%</span>
+          <p className="text-gray-300">Increase in church attacks in 2021</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">642%</span>
+          <p className="text-gray-300">Rise in anti-Semitic incidents since 2017</p>
+        </div>
+      </div>
+
+      {/* Church Burnings Chart */}
+      <ChurchBurningsChart />
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Government Response Disparities</h3>
+          <p className="text-gray-300 mb-4">
+            Analysis of government responses to religious targeting reveals concerning disparities. While some incidents receive 
+            immediate condemnation and resource allocation, others—particularly those targeting Christian churches—have been met 
+            with delayed responses or contextualizing rhetoric that critics argue minimizes the severity of these hate crimes.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Following the 2021 church burning spree that saw 68 churches damaged or destroyed, government officials waited an average of 12 days before issuing statements, compared to same-day responses for other religious targets.</p>
+            <p className="text-xs text-gray-400">Source: BC Public Safety Ministry, Media Response Analysis</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Prosecution Disparities</h3>
+          <p className="text-gray-300 mb-4">
+            Prosecution rates for religious hate crimes show significant disparities depending on which communities are targeted. 
+            This uneven application of justice has created a perception that some religious communities receive greater protection 
+            under the law than others.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Of the 169 church attacks since 2017, only 7 resulted in arrests and 3 in prosecutions. By comparison, other religious hate crimes saw prosecution rates 8 times higher during the same period.</p>
+            <p className="text-xs text-gray-400">Source: BC Prosecution Service, Religious Freedom Watch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MentalHealthSection() {
+  return (
+    <section className="mb-12" id="mental-health-crisis">
+      <h2 className="text-3xl font-bold mb-6">Mental Health System Collapse</h2>
+      <p className="mb-6 text-gray-300">
+        British Columbia is experiencing an unprecedented mental health crisis, with skyrocketing demand for services 
+        while funding has failed to keep pace, leaving thousands without access to essential care.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">183%</span>
+          <p className="text-gray-300">Increase in mental health emergency calls</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">156%</span>
+          <p className="text-gray-300">Growth in untreated mental illness</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">-2%</span>
+          <p className="text-gray-300">Decline in inflation-adjusted mental health funding</p>
+        </div>
+      </div>
+
+      {/* Mental Health Chart */}
+      <MentalHealthChart />
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Street-Level Consequences</h3>
+          <p className="text-gray-300 mb-4">
+            The collapse of mental health services has had devastating consequences on BC streets. Police report that 
+            approximately 68% of all emergency calls now involve individuals with untreated mental illness, straining 
+            law enforcement resources and leading to inappropriate criminalization of mental health issues.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Vancouver Police Department estimates that officers spend 21,000+ hours annually responding to mental health crises that should be handled by healthcare professionals.</p>
+            <p className="text-xs text-gray-400">Source: Vancouver Police Department, 2023</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Wait Times Crisis</h3>
+          <p className="text-gray-300 mb-4">
+            Average wait times for mental health services have increased dramatically, with many patients waiting months 
+            or even years for treatment. This delay in care often leads to deterioration in condition, increased emergency 
+            room visits, and preventable tragedies.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">The average wait time for psychiatric services in BC has increased from 3 weeks in 2017 to 18 weeks in 2023, with some regions reporting waits of up to 52 weeks for non-emergency care.</p>
+            <p className="text-xs text-gray-400">Source: BC Mental Health Association, BC College of Physicians</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function OverspendingSection() {
+  return (
+    <section className="mb-12" id="government-overspending">
+      <h2 className="text-3xl font-bold mb-6">Government Overspending & Misallocation</h2>
+      <p className="mb-6 text-gray-300">
+        While essential services deteriorate, the BC government has dramatically increased spending on administrative bloat, 
+        ideological initiatives, and non-essential programs, creating a significant disconnect between budget priorities and public needs.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">87%</span>
+          <p className="text-gray-300">Increase in government administrative staff</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">363%</span>
+          <p className="text-gray-300">Overspending on DEI programs vs. budget</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">-18%</span>
+          <p className="text-gray-300">Underfunding of essential services vs. budget</p>
+        </div>
+      </div>
+
+      {/* Overspending Chart */}
+      <OverspendingChart />
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Administrative Bloat</h3>
+          <p className="text-gray-300 mb-4">
+            Since 2017, the number of government administrative positions has increased by 87%, with the average 
+            salary for these positions growing by 32% (adjusted for inflation). Meanwhile, frontline service 
+            providers have seen minimal staffing increases and modest salary growth below inflation.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">The BC government now employs 1 administrator for every 2.3 frontline service providers, compared to a ratio of 1:5.8 in 2017.</p>
+            <p className="text-xs text-gray-400">Source: BC Public Service Agency, Office of the Auditor General</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Consultant Spending</h3>
+          <p className="text-gray-300 mb-4">
+            Spending on external consultants has exploded under the current government, with minimal oversight 
+            or accountability measures. Many consulting contracts have gone to firms with connections to government 
+            officials or party donors, raising concerns about potential conflicts of interest.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Consultant spending increased from $0.9 billion in 2017 to $3.8 billion in 2023, with 42% of contracts awarded without competitive bidding processes.</p>
+            <p className="text-xs text-gray-400">Source: BC Procurement Services, Freedom of Information Requests</p>
           </div>
         </div>
       </div>

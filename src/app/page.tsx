@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -7,7 +7,10 @@ import {
   HousingChartSection, 
   EconomicChartSection,
   ImmigrationChartSection,
-  OrganizedCrimeSection
+  OrganizedCrimeSection,
+  ChurchBurningsSection,
+  MentalHealthSection,
+  OverspendingSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -59,9 +62,17 @@ export default function Home() {
             <Clock size={18} className="mr-2" stroke="#f97316" />
             <span>Healthcare Collapse</span>
           </a>
-          <a href="#corruption-cases" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
-            <Building size={18} className="mr-2" stroke="#f97316" />
-            <span>Corruption Cases</span>
+          <a href="#church-burning-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Flame size={18} className="mr-2" stroke="#f97316" />
+            <span>Church Burnings</span>
+          </a>
+          <a href="#mental-health-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Brain size={18} className="mr-2" stroke="#f97316" />
+            <span>Mental Health Crisis</span>
+          </a>
+          <a href="#government-overspending" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <DollarSign size={18} className="mr-2" stroke="#f97316" />
+            <span>Overspending</span>
           </a>
           <a href="#economic-decline" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Briefcase size={18} className="mr-2" stroke="#f97316" />
@@ -81,11 +92,20 @@ export default function Home() {
         {/* Drug Chart Section */}
         <DrugChartSection />
 
+        {/* Church Burnings Section */}
+        <ChurchBurningsSection />
+
+        {/* Mental Health Section */}
+        <MentalHealthSection />
+
         {/* Housing Chart Section */}
         <HousingChartSection />
 
         {/* Healthcare Chart Section */}
         <HealthcareChartSection />
+
+        {/* Overspending Section */}
+        <OverspendingSection />
 
         {/* Economic Chart Section */}
         <EconomicChartSection />
@@ -150,15 +170,37 @@ export default function Home() {
               <p className="text-gray-300">Healthcare wait times have increased by <span className="text-orange-500 font-bold">41%</span> for essential surgeries and procedures</p>
             </div>
             
-            {/* Tax Finding */}
+            {/* Church Burnings Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Flame size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Church Burnings</h3>
+              </div>
+              <p className="text-gray-300">Church burnings and vandalism increased by <span className="text-orange-500 font-bold">467%</span> in 2021 with minimal government response</p>
+            </div>
+            
+            {/* Mental Health Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Brain size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Mental Health</h3>
+              </div>
+              <p className="text-gray-300">Mental health emergency calls increased by <span className="text-orange-500 font-bold">183%</span> while funding decreased by <span className="text-orange-500 font-bold">2%</span></p>
+            </div>
+            
+            {/* Overspending Finding */}
             <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
               <div className="flex items-start mb-4">
                 <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
                   <DollarSign size={24} stroke="#f97316" />
                 </div>
-                <h3 className="text-xl font-semibold">Tax Burden</h3>
+                <h3 className="text-xl font-semibold">Overspending</h3>
               </div>
-              <p className="text-gray-300">Tax burden on middle-class families has increased while services have deteriorated</p>
+              <p className="text-gray-300">DEI program spending exceeded budget by <span className="text-orange-500 font-bold">363%</span> while essential services were underfunded by <span className="text-orange-500 font-bold">18%</span></p>
             </div>
           </div>
         </section>
