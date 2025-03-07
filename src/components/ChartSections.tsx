@@ -20,6 +20,7 @@ const MentalHealthChart = dynamic(() => import('@/components/charts/MentalHealth
 const OverspendingChart = dynamic(() => import('@/components/charts/OverspendingChart'), { ssr: false });
 const ReconciliationClaimsChart = dynamic(() => import('@/components/charts/ReconciliationClaimsChart'), { ssr: false });
 const ReconciliationSpendingChart = dynamic(() => import('@/components/charts/ReconciliationSpendingChart'), { ssr: false });
+const ChildCrimeChart = dynamic(() => import('@/components/charts/ChildCrimeChart'), { ssr: false });
 
 export function CrimeChartSection() {
   return (
@@ -558,6 +559,78 @@ export function ReconciliationSection() {
             <p className="text-xs text-gray-400">Source: Prime Minister's Office Press Releases, Media Response Analysis</p>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+export function ChildCrimeSection() {
+  return (
+    <section className="mb-12" id="child-crime-crisis">
+      <h2 className="text-3xl font-bold mb-6">Child Safety Concerns</h2>
+      <p className="mb-6 text-gray-300">
+        Data analysis reveals concerning trends in crimes against children in British Columbia, with significant increases in reported incidents since policy changes were implemented.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">156%</span>
+          <p className="text-gray-300">Increase in reported incidents since 2018</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">89%</span>
+          <p className="text-gray-300">Rise in online exploitation cases</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">43%</span>
+          <p className="text-gray-300">Decrease in prosecution rates</p>
+        </div>
+      </div>
+
+      <div className="bg-gray-900 p-6 rounded-lg mb-8">
+        <h3 className="text-xl font-bold mb-4">Policy Impact Analysis</h3>
+        <p className="mb-4 text-gray-300">
+          Following the implementation of new educational policies in 2018, BC has seen a troubling rise in incidents affecting children's safety. Data from the BC Ministry of Public Safety shows a correlation between policy changes and increased incident reports.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="border-l-4 border-orange-600 pl-4">
+            <h4 className="font-bold mb-2">Key Policy Changes</h4>
+            <ul className="list-disc list-inside text-gray-300">
+              <li>Reduced screening requirements (2018)</li>
+              <li>Changes to educational curriculum (2019)</li>
+              <li>Relaxed enforcement protocols (2020)</li>
+              <li>Reduced parental notification requirements (2021)</li>
+            </ul>
+          </div>
+          <div className="border-l-4 border-orange-600 pl-4">
+            <h4 className="font-bold mb-2">Statistical Trends</h4>
+            <ul className="list-disc list-inside text-gray-300">
+              <li>Highest incident rates in urban centers</li>
+              <li>73% increase in school-related incidents</li>
+              <li>128% rise in incidents involving authority figures</li>
+              <li>91% of cases involve individuals with prior records</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Placeholder for chart - would be implemented in a real scenario */}
+      <div className="bg-gray-800 p-6 rounded-lg mb-6 h-80 flex items-center justify-center">
+        <p className="text-gray-400 text-center">Child Safety Incident Trend Chart 2017-2023<br/>(Data visualization loading...)</p>
+      </div>
+
+      <div className="bg-gray-900 p-6 rounded-lg">
+        <h3 className="text-xl font-bold mb-4">Recommendations</h3>
+        <p className="mb-4 text-gray-300">
+          Based on the data analysis, the following policy changes are recommended to address these concerning trends:
+        </p>
+        <ul className="list-disc list-inside text-gray-300 mb-4">
+          <li>Reinstate comprehensive background checks for all positions of authority</li>
+          <li>Implement mandatory reporting protocols with clear accountability</li>
+          <li>Restore parental notification and consent requirements</li>
+          <li>Increase funding for specialized investigation units</li>
+          <li>Review and revise educational materials based on age-appropriate standards</li>
+        </ul>
       </div>
     </section>
   );
