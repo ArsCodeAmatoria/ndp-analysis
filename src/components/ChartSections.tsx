@@ -11,7 +11,7 @@ const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'),
 
 // Advanced charts
 const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
-const BCChoroplethMap = dynamic(() => import('@/components/charts/BCChoroplethMap'), { ssr: false });
+const BCRegionalHeatmap = dynamic(() => import('@/components/charts/BCRegionalHeatmap'), { ssr: false });
 const BudgetSankeyChart = dynamic(() => import('@/components/charts/BudgetSankeyChart'), { ssr: false });
 const ImmigrationScatterChart = dynamic(() => import('@/components/charts/ImmigrationScatterChart'), { ssr: false });
 
@@ -46,9 +46,9 @@ export function CrimeChartSection() {
         <CrimeRegressionChart />
       </div>
       
-      {/* Regional Crime Map */}
+      {/* Regional Crime Heatmap */}
       <div className="mt-8">
-        <BCChoroplethMap />
+        <BCRegionalHeatmap />
       </div>
     </section>
   );
