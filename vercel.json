@@ -30,7 +30,13 @@
   ],
   "redirects": [
     {
-      "source": "https://ndp-analysis-site.vercel.app/:path*",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ndp-analysis-site.vercel.app"
+        }
+      ],
       "destination": "https://www.voideconomy.com/:path*",
       "permanent": true
     }
