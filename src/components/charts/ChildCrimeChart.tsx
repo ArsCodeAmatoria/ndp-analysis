@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,6 +12,8 @@ import {
   Legend,
   Filler
 } from 'chart.js';
+import { Line } from 'react-chartjs-2';
+import { Shield } from 'lucide-react';
 
 // Register ChartJS components
 ChartJS.register(
@@ -52,6 +53,7 @@ const ChildCrimeChart = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: 'top' as const,
@@ -98,8 +100,25 @@ const ChildCrimeChart = () => {
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg mb-6">
-      <Line data={data} options={options} />
+    <div className="bg-gray-900 p-6 rounded-lg">
+      <div className="flex justify-between items-center mb-4">
+        <div className="flex items-center">
+          <Shield size={20} stroke="#f97316" className="mr-2" />
+          <h3 className="text-xl font-semibold">Child Safety Incidents (2017-2023)</h3>
+        </div>
+      </div>
+      <div className="h-64">
+        <Line data={data} options={options} />
+      </div>
+      <div className="mt-4 bg-gray-800 p-4 rounded-lg">
+        <h4 className="font-semibold mb-2">Key Insight:</h4>
+        <p className="text-sm text-gray-300">
+          Since 2017, reported incidents affecting children have increased by 302%, while prosecution rates have declined by 49%. This inverse relationship suggests serious gaps in the justice system's response to child safety concerns.
+        </p>
+        <p className="text-xs text-gray-400 mt-2">
+          Source: BC Ministry of Public Safety, BC Children's Advocacy Coalition
+        </p>
+      </div>
     </div>
   );
 };
