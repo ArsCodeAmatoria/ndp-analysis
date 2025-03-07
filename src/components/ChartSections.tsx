@@ -614,10 +614,8 @@ export function ChildCrimeSection() {
         </div>
       </div>
 
-      {/* Placeholder for chart - would be implemented in a real scenario */}
-      <div className="bg-gray-800 p-6 rounded-lg mb-6 h-80 flex items-center justify-center">
-        <p className="text-gray-400 text-center">Child Safety Incident Trend Chart 2017-2023<br/>(Data visualization loading...)</p>
-      </div>
+      {/* Use the actual chart component */}
+      <ChildCrimeChart />
 
       <div className="bg-gray-900 p-6 rounded-lg">
         <h3 className="text-xl font-bold mb-4">Recommendations</h3>
