@@ -13,7 +13,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
+  // Removing the static export to allow client-side rendering
+  // output: 'export',
 };
 
 export default nextConfig; 
