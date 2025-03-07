@@ -9,6 +9,12 @@ const HealthcareChart = dynamic(() => import('@/components/charts/HealthcareChar
 const HousingChart = dynamic(() => import('@/components/charts/HousingChart'), { ssr: false });
 const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'), { ssr: false });
 
+// Advanced charts
+const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
+const BCChoroplethMap = dynamic(() => import('@/components/charts/BCChoroplethMap'), { ssr: false });
+const BudgetSankeyChart = dynamic(() => import('@/components/charts/BudgetSankeyChart'), { ssr: false });
+const ImmigrationScatterChart = dynamic(() => import('@/components/charts/ImmigrationScatterChart'), { ssr: false });
+
 export function CrimeChartSection() {
   return (
     <section className="mb-12" id="crime-crisis">
@@ -34,6 +40,16 @@ export function CrimeChartSection() {
 
       {/* Crime Chart Component */}
       <CrimeChart />
+      
+      {/* Crime Regression Chart */}
+      <div className="mt-8">
+        <CrimeRegressionChart />
+      </div>
+      
+      {/* Regional Crime Map */}
+      <div className="mt-8">
+        <BCChoroplethMap />
+      </div>
     </section>
   );
 }
@@ -63,6 +79,35 @@ export function DrugChartSection() {
 
       {/* Drug Chart Component */}
       <DrugChart />
+    </section>
+  );
+}
+
+export function ImmigrationChartSection() {
+  return (
+    <section className="mb-12" id="immigration-impact">
+      <h2 className="text-3xl font-bold mb-6">Immigration Impact Analysis</h2>
+      <p className="mb-6 text-gray-300">
+        Rapid population growth through immigration without corresponding infrastructure and housing development has contributed to multiple crises across British Columbia.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">42%</span>
+          <p className="text-gray-300">Immigration increase in Vancouver since 2017</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">12%</span>
+          <p className="text-gray-300">Decline in housing starts despite population growth</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">0.4%</span>
+          <p className="text-gray-300">Rental vacancy rate in major urban centers</p>
+        </div>
+      </div>
+
+      {/* Immigration Scatter Chart */}
+      <ImmigrationScatterChart />
     </section>
   );
 }
@@ -149,6 +194,11 @@ export function EconomicChartSection() {
           <p className="mb-2">Business investment has declined by 17% relative to GDP, with major projects cancelled or relocated to other provinces.</p>
           <p className="text-sm text-gray-400">Source: BC Business Council</p>
         </div>
+      </div>
+      
+      {/* Budget Sankey Chart */}
+      <div className="mt-8">
+        <BudgetSankeyChart />
       </div>
     </section>
   );

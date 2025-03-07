@@ -5,7 +5,8 @@ import {
   DrugChartSection, 
   HealthcareChartSection, 
   HousingChartSection, 
-  EconomicChartSection 
+  EconomicChartSection,
+  ImmigrationChartSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -69,6 +70,9 @@ export default function Home() {
 
         {/* Crime Chart Section */}
         <CrimeChartSection />
+
+        {/* Immigration Chart Section */}
+        <ImmigrationChartSection />
 
         {/* Drug Chart Section */}
         <DrugChartSection />
