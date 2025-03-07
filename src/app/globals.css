@@ -12,18 +12,17 @@
   --text-muted: #9ca3af; /* Gray-400 */
 }
 
-@theme inline {
+/* Update theme variables to use Inter font */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
 /* Force dark theme regardless of system preference */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  @apply bg-black text-white;
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 

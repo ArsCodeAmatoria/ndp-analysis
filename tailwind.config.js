@@ -5,6 +5,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -25,6 +26,14 @@ module.exports = {
           900: '#7c2d12',
           950: '#431407',
         },
+      },
+      backgroundColor: {
+        'dark': '#000000',
+        'card': '#111827',
+      },
+      textColor: {
+        'light': '#ffffff',
+        'muted': '#9ca3af',
       },
     },
   },
