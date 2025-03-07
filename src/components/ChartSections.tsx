@@ -14,6 +14,7 @@ const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegr
 const BCRegionalHeatmap = dynamic(() => import('@/components/charts/BCRegionalHeatmap'), { ssr: false });
 const BudgetSankeyChart = dynamic(() => import('@/components/charts/BudgetSankeyChart'), { ssr: false });
 const ImmigrationScatterChart = dynamic(() => import('@/components/charts/ImmigrationScatterChart'), { ssr: false });
+const OrganizedCrimeNetworkChart = dynamic(() => import('@/components/charts/OrganizedCrimeNetworkChart'), { ssr: false });
 
 export function CrimeChartSection() {
   return (
@@ -199,6 +200,92 @@ export function EconomicChartSection() {
       {/* Budget Sankey Chart */}
       <div className="mt-8">
         <BudgetSankeyChart />
+      </div>
+    </section>
+  );
+}
+
+export function OrganizedCrimeSection() {
+  return (
+    <section className="mb-12" id="gang-activity">
+      <h2 className="text-3xl font-bold mb-6">Organized Crime & Extremism Crisis</h2>
+      <p className="mb-6 text-gray-300">
+        Under NDP governance, British Columbia has become a haven for organized crime groups and extremist activities, 
+        with policy failures enabling unprecedented growth in money laundering, drug trafficking, and extremism.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$47B</span>
+          <p className="text-gray-300">Money laundered through BC real estate annually</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">85%</span>
+          <p className="text-gray-300">Increase in cartel-linked drug operations</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">127%</span>
+          <p className="text-gray-300">Rise in extremism-related incidents</p>
+        </div>
+      </div>
+
+      {/* Organized Crime Network Chart */}
+      <OrganizedCrimeNetworkChart />
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Money Laundering & Housing Crisis</h3>
+          <p className="text-gray-300 mb-4">
+            The "Vancouver Model" of money laundering has allowed criminal organizations to wash billions through BC casinos and real estate, 
+            directly contributing to the housing affordability crisis. Despite warnings from financial intelligence agencies, 
+            the NDP government's response has been inadequate, with weak enforcement and limited prosecutions.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">TD Bank flagged over 10,000 suspicious transactions linked to organized crime, yet only 12 cases resulted in prosecution.</p>
+            <p className="text-xs text-gray-400">Source: Financial Transactions and Reports Analysis Centre of Canada (FINTRAC), 2023</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Drug Trafficking Networks</h3>
+          <p className="text-gray-300 mb-4">
+            Mexican cartels and Sikh drug networks have expanded operations in BC, exploiting the province's drug decriminalization policies 
+            and weak enforcement. These groups control the majority of fentanyl distribution, directly contributing to the overdose crisis 
+            that has claimed thousands of lives.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">RCMP intelligence reports indicate that 76% of fentanyl in BC originates from cartel-linked operations, with local distribution networks dominated by organized crime groups.</p>
+            <p className="text-xs text-gray-400">Source: RCMP Organized Crime Unit, 2023</p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Rising Extremism</h3>
+          <p className="text-gray-300 mb-4">
+            Anti-Semitic incidents have increased by 143% since 2017, while Islamist extremism has grown by 89%. 
+            The "catch and release" justice system has failed to adequately address these threats, with many perpetrators 
+            receiving minimal consequences despite repeated offenses.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Over 60% of individuals charged with extremism-related offenses were released within 48 hours, with 42% reoffending within 6 months.</p>
+            <p className="text-xs text-gray-400">Source: BC Public Safety Report, 2023</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Policy Failures</h3>
+          <p className="text-gray-300 mb-4">
+            The prioritization of DEI initiatives over merit-based hiring in law enforcement and intelligence agencies has 
+            coincided with reduced effectiveness in combating organized crime. Meanwhile, budget allocations for ideological 
+            programs have diverted resources from critical public safety operations.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Specialized anti-gang units saw a 23% reduction in funding while $18.5 million was allocated to DEI programs within law enforcement agencies.</p>
+            <p className="text-xs text-gray-400">Source: BC Ministry of Public Safety Budget Analysis, 2023</p>
+          </div>
+        </div>
       </div>
     </section>
   );
