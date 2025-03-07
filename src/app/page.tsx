@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -14,7 +14,8 @@ import {
   ReconciliationSection,
   ChildCrimeSection,
   PopulationExodusSection,
-  RefugeeImpactSection
+  RefugeeImpactSection,
+  IllegalImmigrationSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -98,6 +99,10 @@ export default function Home() {
             <Globe size={18} className="mr-2" stroke="#f97316" />
             <span>Refugee Burdens</span>
           </a>
+          <a href="#illegal-immigration" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Map size={18} className="mr-2" stroke="#f97316" />
+            <span>Illegal Immigration</span>
+          </a>
         </div>
 
         {/* Crime Chart Section */}
@@ -120,6 +125,9 @@ export default function Home() {
 
         {/* Refugee Impact Section */}
         <RefugeeImpactSection />
+
+        {/* Illegal Immigration Section */}
+        <IllegalImmigrationSection />
 
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
@@ -277,6 +285,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Refugee Burdens</h3>
               </div>
               <p className="text-gray-300">Refugee claimants have a <span className="text-orange-500 font-bold">74%</span> unemployment rate, costing taxpayers <span className="text-orange-500 font-bold">$298M</span> annually with minimal integration success</p>
+            </div>
+
+            {/* Illegal Immigration Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Map size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Illegal Immigration</h3>
+              </div>
+              <p className="text-gray-300">Illegal entries have increased by <span className="text-orange-500 font-bold">894%</span> since 2017, while deportation order execution has fallen from <span className="text-orange-500 font-bold">68%</span> to just <span className="text-orange-500 font-bold">12%</span></p>
             </div>
           </div>
         </section>

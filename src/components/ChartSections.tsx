@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase } from 'lucide-react';
+import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase, Map, AlertTriangle } from 'lucide-react';
 
 // Dynamically import chart components with no SSR
 const CrimeChart = dynamic(() => import('@/components/charts/CrimeChart'), { ssr: false });
@@ -11,6 +11,7 @@ const HousingChart = dynamic(() => import('@/components/charts/HousingChart'), {
 const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'), { ssr: false });
 const PopulationExodusChart = dynamic(() => import('@/components/charts/PopulationExodusChart'), { ssr: false });
 const RefugeeImpactChart = dynamic(() => import('@/components/charts/RefugeeImpactChart'), { ssr: false });
+const IllegalImmigrationChart = dynamic(() => import('@/components/charts/IllegalImmigrationChart'), { ssr: false });
 
 // Advanced charts
 const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
@@ -977,6 +978,143 @@ export function RefugeeImpactSection() {
           </h4>
           <p className="text-sm text-gray-300">
             A comprehensive reform of refugee integration policies is needed, focusing on skills assessment, language training, and employment matching. Successful models from provinces like Manitoba, which achieves a 62% employment rate within 12 months, should be adopted to reduce system burdens and improve outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function IllegalImmigrationSection() {
+  return (
+    <section className="mb-12" id="illegal-immigration">
+      <h2 className="text-3xl font-bold mb-6">Illegal Immigration Crisis</h2>
+      <p className="mb-6 text-gray-300">
+        British Columbia is facing an unprecedented surge in illegal immigration, with declining enforcement and rising costs creating significant strain on provincial systems and public safety.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">894%</span>
+          <p className="text-gray-300">Increase in illegal entries since 2017</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">12%</span>
+          <p className="text-gray-300">Current deportation order execution rate</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$342M</span>
+          <p className="text-gray-300">Annual cost to BC taxpayers in 2024</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Map size={20} stroke="#f97316" className="mr-2" />
+            Security Vulnerabilities
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Border Enforcement Decline</h4>
+                <p className="text-sm text-gray-300">Border patrol staffing has decreased by 28% since 2017, while the number of illegal crossing points has increased by 156%, creating numerous security gaps.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Coastal Vulnerabilities</h4>
+                <p className="text-sm text-gray-300">BC's extensive coastline has become a major entry point, with maritime interdiction resources reduced by 42% despite intelligence indicating increased smuggling activity.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Criminal Network Exploitation</h4>
+                <p className="text-sm text-gray-300">Organized crime groups are increasingly involved in human smuggling operations, charging up to $50,000 per person for illegal entry into BC, with minimal risk of prosecution.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <AlertTriangle size={20} stroke="#f97316" className="mr-2" />
+            System Impacts
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Healthcare Strain</h4>
+                <p className="text-sm text-gray-300">Emergency departments report a 42% increase in uninsured patients since 2017, with costs rarely recovered and creating longer wait times for residents.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Housing Impact</h4>
+                <p className="text-sm text-gray-300">Illegal immigrants occupy an estimated 17% of emergency shelter capacity and contribute to housing shortages in urban centers, with minimal documentation or tracking.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Public Safety Concerns</h4>
+                <p className="text-sm text-gray-300">Law enforcement reports that 23% of individuals with deportation orders have criminal records in their countries of origin, yet remain in BC due to reduced enforcement.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Illegal Immigration Chart */}
+      <IllegalImmigrationChart />
+      
+      <div className="bg-gray-900 p-6 rounded-lg mt-8">
+        <h3 className="text-xl font-bold mb-4">Policy Failures</h3>
+        <p className="mb-4 text-gray-300">
+          The current approach to illegal immigration enforcement represents a significant policy failure, with declining deportation rates, reduced border security, and minimal consequences for those entering the province illegally.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">68% → 12%</h4>
+            <p className="text-xs text-gray-300 text-center">Decline in deportation order execution rate since 2017</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">23%</h4>
+            <p className="text-xs text-gray-300 text-center">Estimated detection rate of illegal entries at BC borders</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">$10,800</h4>
+            <p className="text-xs text-gray-300 text-center">Average annual cost per illegal immigrant to BC taxpayers</p>
+          </div>
+        </div>
+        <div className="bg-orange-600/10 p-4 rounded-lg border border-orange-600/30">
+          <h4 className="font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Policy Recommendation
+          </h4>
+          <p className="text-sm text-gray-300">
+            A comprehensive reform of immigration enforcement is urgently needed, including increased border security resources, expedited deportation proceedings for those entering illegally, and cooperation between provincial and federal authorities to address the growing crisis.
           </p>
         </div>
       </div>
