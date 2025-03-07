@@ -617,18 +617,105 @@ export function ChildCrimeSection() {
       {/* Use the actual chart component */}
       <ChildCrimeChart />
 
-      <div className="bg-gray-900 p-6 rounded-lg">
-        <h3 className="text-xl font-bold mb-4">Recommendations</h3>
-        <p className="mb-4 text-gray-300">
-          Based on the data analysis, the following policy changes are recommended to address these concerning trends:
+      {/* Enhanced Recommendations Section */}
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-lg shadow-lg border border-gray-700">
+        <div className="flex items-center mb-6">
+          <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 className="text-2xl font-bold text-white">Policy Recommendations</h3>
+        </div>
+        
+        <p className="mb-6 text-gray-300 border-l-4 border-orange-600 pl-4 italic">
+          Based on comprehensive data analysis and expert consultation, the following evidence-based policy changes are recommended to address these concerning trends and better protect children in British Columbia.
         </p>
-        <ul className="list-disc list-inside text-gray-300 mb-4">
-          <li>Reinstate comprehensive background checks for all positions of authority</li>
-          <li>Implement mandatory reporting protocols with clear accountability</li>
-          <li>Restore parental notification and consent requirements</li>
-          <li>Increase funding for specialized investigation units</li>
-          <li>Review and revise educational materials based on age-appropriate standards</li>
-        </ul>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          <div className="bg-gray-800/50 p-5 rounded-lg hover:bg-gray-800 transition-colors border-t-2 border-orange-600">
+            <div className="flex items-center mb-3">
+              <div className="bg-orange-600/10 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <path d="M8 11h8"></path>
+                  <path d="M12 15V7"></path>
+                </svg>
+              </div>
+              <h4 className="font-bold text-white">Background Checks</h4>
+            </div>
+            <p className="text-gray-300 text-sm">Reinstate comprehensive background checks for all positions of authority with direct access to children.</p>
+          </div>
+          
+          <div className="bg-gray-800/50 p-5 rounded-lg hover:bg-gray-800 transition-colors border-t-2 border-orange-600">
+            <div className="flex items-center mb-3">
+              <div className="bg-orange-600/10 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <h4 className="font-bold text-white">Mandatory Reporting</h4>
+            </div>
+            <p className="text-gray-300 text-sm">Implement mandatory reporting protocols with clear accountability and consequences for non-compliance.</p>
+          </div>
+          
+          <div className="bg-gray-800/50 p-5 rounded-lg hover:bg-gray-800 transition-colors border-t-2 border-orange-600">
+            <div className="flex items-center mb-3">
+              <div className="bg-orange-600/10 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h4 className="font-bold text-white">Parental Rights</h4>
+            </div>
+            <p className="text-gray-300 text-sm">Restore parental notification and consent requirements for all sensitive educational content and activities.</p>
+          </div>
+          
+          <div className="bg-gray-800/50 p-5 rounded-lg hover:bg-gray-800 transition-colors border-t-2 border-orange-600">
+            <div className="flex items-center mb-3">
+              <div className="bg-orange-600/10 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="m18 16 4-4-4-4"></path>
+                  <path d="m6 8-4 4 4 4"></path>
+                  <path d="m14.5 4-5 16"></path>
+                </svg>
+              </div>
+              <h4 className="font-bold text-white">Policy Enforcement</h4>
+            </div>
+            <p className="text-gray-300 text-sm">Strengthen enforcement of existing child protection laws with increased penalties for violations.</p>
+          </div>
+          
+          <div className="bg-gray-800/50 p-5 rounded-lg hover:bg-gray-800 transition-colors border-t-2 border-orange-600">
+            <div className="flex items-center mb-3">
+              <div className="bg-orange-600/10 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <h4 className="font-bold text-white">Educational Review</h4>
+            </div>
+            <p className="text-gray-300 text-sm">Review and revise educational materials based on age-appropriate standards with expert and parental input.</p>
+          </div>
+        </div>
+        
+        <div className="bg-orange-600/10 p-4 rounded-lg border border-orange-600/30">
+          <div className="flex items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <h4 className="font-bold text-white">Implementation Timeline</h4>
+          </div>
+          <p className="text-gray-300 text-sm">
+            These recommendations should be implemented within the next 6 months, with priority given to background checks and parental notification requirements. A comprehensive review should be conducted after 12 months to assess effectiveness and make necessary adjustments.
+          </p>
+        </div>
       </div>
     </section>
   );
