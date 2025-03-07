@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map, GraduationCap } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -15,7 +15,8 @@ import {
   ChildCrimeSection,
   PopulationExodusSection,
   RefugeeImpactSection,
-  IllegalImmigrationSection
+  IllegalImmigrationSection,
+  InternationalStudentSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -103,6 +104,10 @@ export default function Home() {
             <Map size={18} className="mr-2" stroke="#f97316" />
             <span>Illegal Immigration</span>
           </a>
+          <a href="#international-students" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <GraduationCap size={18} className="mr-2" stroke="#f97316" />
+            <span>Diploma Mills</span>
+          </a>
         </div>
 
         {/* Crime Chart Section */}
@@ -128,6 +133,9 @@ export default function Home() {
 
         {/* Illegal Immigration Section */}
         <IllegalImmigrationSection />
+
+        {/* International Student Section */}
+        <InternationalStudentSection />
 
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
@@ -296,6 +304,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Illegal Immigration</h3>
               </div>
               <p className="text-gray-300">Illegal entries have increased by <span className="text-orange-500 font-bold">894%</span> since 2017, while deportation order execution has fallen from <span className="text-orange-500 font-bold">68%</span> to just <span className="text-orange-500 font-bold">12%</span></p>
+            </div>
+
+            {/* International Student Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <GraduationCap size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Diploma Mills</h3>
+              </div>
+              <p className="text-gray-300"><span className="text-orange-500 font-bold">63%</span> of international students don't return home, while <span className="text-orange-500 font-bold">112</span> diploma mills operate with minimal oversight, costing taxpayers <span className="text-orange-500 font-bold">$4.2B</span> annually</p>
             </div>
           </div>
         </section>

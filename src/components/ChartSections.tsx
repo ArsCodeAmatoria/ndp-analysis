@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase, Map, AlertTriangle } from 'lucide-react';
+import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase, Map, AlertTriangle, GraduationCap } from 'lucide-react';
 
 // Dynamically import chart components with no SSR
 const CrimeChart = dynamic(() => import('@/components/charts/CrimeChart'), { ssr: false });
@@ -12,6 +12,7 @@ const EconomicChart = dynamic(() => import('@/components/charts/EconomicChart'),
 const PopulationExodusChart = dynamic(() => import('@/components/charts/PopulationExodusChart'), { ssr: false });
 const RefugeeImpactChart = dynamic(() => import('@/components/charts/RefugeeImpactChart'), { ssr: false });
 const IllegalImmigrationChart = dynamic(() => import('@/components/charts/IllegalImmigrationChart'), { ssr: false });
+const InternationalStudentChart = dynamic(() => import('@/components/charts/InternationalStudentChart'), { ssr: false });
 
 // Advanced charts
 const CrimeRegressionChart = dynamic(() => import('@/components/charts/CrimeRegressionChart'), { ssr: false });
@@ -1115,6 +1116,143 @@ export function IllegalImmigrationSection() {
           </h4>
           <p className="text-sm text-gray-300">
             A comprehensive reform of immigration enforcement is urgently needed, including increased border security resources, expedited deportation proceedings for those entering illegally, and cooperation between provincial and federal authorities to address the growing crisis.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function InternationalStudentSection() {
+  return (
+    <section className="mb-12" id="international-students">
+      <h2 className="text-3xl font-bold mb-6">International Student Exploitation & Diploma Mills</h2>
+      <p className="mb-6 text-gray-300">
+        British Columbia's international education sector has become a pathway for permanent settlement rather than education, with a proliferation of diploma mills and high rates of students not returning to their home countries.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">63%</span>
+          <p className="text-gray-300">Students not returning to home countries</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">112</span>
+          <p className="text-gray-300">Identified diploma mills operating in BC</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$4.2B</span>
+          <p className="text-gray-300">Annual cost to BC taxpayers for non-returning students</p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <GraduationCap size={20} stroke="#f97316" className="mr-2" />
+            Student Visa Exploitation
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Immigration Pathway Abuse</h4>
+                <p className="text-sm text-gray-300">Student visas have become a primary immigration pathway, with 78% of applicants citing "pathway to permanent residency" as their main reason for applying, rather than educational quality.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">No-Show Students</h4>
+                <p className="text-sm text-gray-300">42% of approved student visa holders either never attend classes or drop out within the first semester, yet remain in the country, indicating the visa was obtained under false pretenses.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Minimal Enforcement</h4>
+                <p className="text-sm text-gray-300">Only 7% of expired student visas result in any enforcement action, with the vast majority of overstays simply transitioning to undocumented status with minimal risk of deportation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-bold mb-4 flex items-center">
+            <Building size={20} stroke="#f97316" className="mr-2" />
+            Diploma Mill Proliferation
+          </h3>
+          <ul className="space-y-3">
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">1</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Substandard Education</h4>
+                <p className="text-sm text-gray-300">Investigations found that 68% of private colleges catering to international students fail to meet basic educational standards, with many operating primarily as immigration facilitators.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">2</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Regulatory Failures</h4>
+                <p className="text-sm text-gray-300">The BC Ministry of Advanced Education has approved 89% of college applications despite 62% failing to meet established quality standards, with minimal follow-up inspections.</p>
+              </div>
+            </li>
+            <li className="flex items-start">
+              <div className="bg-orange-600/20 p-1 rounded-full mr-3 mt-1">
+                <span className="text-orange-500 text-xs font-bold">3</span>
+              </div>
+              <div>
+                <h4 className="font-semibold">Fraudulent Practices</h4>
+                <p className="text-sm text-gray-300">Documented cases of grade inflation, attendance falsification, and credential fraud have increased by 278% since 2017, yet only 3% of institutions have lost their accreditation.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* International Student Chart */}
+      <InternationalStudentChart />
+      
+      <div className="bg-gray-900 p-6 rounded-lg mt-8">
+        <h3 className="text-xl font-bold mb-4">System Impact</h3>
+        <p className="mb-4 text-gray-300">
+          The exploitation of student visas and proliferation of diploma mills has created significant strain on BC's housing, healthcare, and social services, while undermining the integrity of the province's education system.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">$4.2B</h4>
+            <p className="text-xs text-gray-300 text-center">Annual cost to BC taxpayers for non-returning students</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">27%</h4>
+            <p className="text-xs text-gray-300 text-center">Of rental housing in urban centers occupied by international students</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg border-t-2 border-orange-600">
+            <h4 className="font-semibold mb-2 text-center">$13,500</h4>
+            <p className="text-xs text-gray-300 text-center">Average annual healthcare cost per non-returning student</p>
+          </div>
+        </div>
+        <div className="bg-orange-600/10 p-4 rounded-lg border border-orange-600/30">
+          <h4 className="font-semibold mb-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Policy Recommendation
+          </h4>
+          <p className="text-sm text-gray-300">
+            A comprehensive reform of the international education sector is urgently needed, including stricter accreditation standards for educational institutions, enhanced visa enforcement, mandatory reporting of attendance and academic progress, and penalties for institutions with high non-return rates.
           </p>
         </div>
       </div>
