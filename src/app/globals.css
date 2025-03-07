@@ -10,20 +10,13 @@
   --gray-medium: #1f2937; /* Gray-800 */
   --gray-light: #374151; /* Gray-700 */
   --text-muted: #9ca3af; /* Gray-400 */
-}
-
-/* Update theme variables to use Inter font */
-:root {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
   --font-sans: var(--font-inter);
 }
 
-/* Force dark theme regardless of system preference */
+/* Basic dark theme styles */
 body {
-  @apply bg-black text-white;
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: white;
 }
 
 /* Custom scrollbar for dark theme */
