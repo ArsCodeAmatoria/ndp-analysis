@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { HousingChartSection, EconomicChartSection } from "@/components/ChartSection";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign } from "lucide-react";
 
 export default function Home() {
   return (
@@ -120,16 +121,77 @@ export default function Home() {
         {/* Economic Chart Section (Client Component) */}
         <EconomicChartSection />
 
-        <section>
-          <h2 className="text-3xl font-bold mb-6">Key Findings</h2>
-          <ul className="list-disc pl-6 space-y-3 text-gray-300">
-            <li>Violent crime has increased by 37% province-wide since the NDP took power in 2017</li>
-            <li>Housing costs have risen by over 43% while housing starts have declined by 12%</li>
-            <li>BC has the highest rate of drug overdose deaths in Canada, with minimal improvement despite policy changes</li>
-            <li>Organized crime groups have expanded operations amid relaxed enforcement policies</li>
-            <li>Healthcare wait times have increased by 41% for essential surgeries and procedures</li>
-            <li>Tax burden on middle-class families has increased while services have deteriorated</li>
-          </ul>
+        {/* Enhanced Key Findings Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-8 text-center">Key Findings</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Crime Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <TrendingUp size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Crime Surge</h3>
+              </div>
+              <p className="text-gray-300">Violent crime has increased by <span className="text-orange-500 font-bold">37%</span> province-wide since the NDP took power in 2017</p>
+            </div>
+            
+            {/* Housing Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <HomeIcon size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Housing Crisis</h3>
+              </div>
+              <p className="text-gray-300">Housing costs have risen by <span className="text-orange-500 font-bold">43%</span> while housing starts have declined by <span className="text-orange-500 font-bold">12%</span></p>
+            </div>
+            
+            {/* Drug Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Pill size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Drug Epidemic</h3>
+              </div>
+              <p className="text-gray-300">BC has the highest rate of drug overdose deaths in Canada, with minimal improvement despite policy changes</p>
+            </div>
+            
+            {/* Crime Groups Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Users size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Organized Crime</h3>
+              </div>
+              <p className="text-gray-300">Organized crime groups have expanded operations amid relaxed enforcement policies</p>
+            </div>
+            
+            {/* Healthcare Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Clock size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Healthcare Delays</h3>
+              </div>
+              <p className="text-gray-300">Healthcare wait times have increased by <span className="text-orange-500 font-bold">41%</span> for essential surgeries and procedures</p>
+            </div>
+            
+            {/* Tax Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <DollarSign size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Tax Burden</h3>
+              </div>
+              <p className="text-gray-300">Tax burden on middle-class families has increased while services have deteriorated</p>
+            </div>
+          </div>
         </section>
       </main>
 
