@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -10,7 +10,8 @@ import {
   OrganizedCrimeSection,
   ChurchBurningsSection,
   MentalHealthSection,
-  OverspendingSection
+  OverspendingSection,
+  ReconciliationSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -74,6 +75,10 @@ export default function Home() {
             <DollarSign size={18} className="mr-2" stroke="#f97316" />
             <span>Overspending</span>
           </a>
+          <a href="#reconciliation-claims" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <FileSearch size={18} className="mr-2" stroke="#f97316" />
+            <span>Reconciliation Claims</span>
+          </a>
           <a href="#economic-decline" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Briefcase size={18} className="mr-2" stroke="#f97316" />
             <span>Economic Decline</span>
@@ -94,6 +99,9 @@ export default function Home() {
 
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
+
+        {/* Reconciliation Section */}
+        <ReconciliationSection />
 
         {/* Mental Health Section */}
         <MentalHealthSection />
@@ -190,6 +198,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Mental Health</h3>
               </div>
               <p className="text-gray-300">Mental health emergency calls increased by <span className="text-orange-500 font-bold">183%</span> while funding decreased by <span className="text-orange-500 font-bold">2%</span></p>
+            </div>
+            
+            {/* Reconciliation Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <FileSearch size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Reconciliation Claims</h3>
+              </div>
+              <p className="text-gray-300">Despite <span className="text-orange-500 font-bold">1,505</span> claimed graves at residential schools, <span className="text-orange-500 font-bold">0</span> excavations have been conducted to verify these claims</p>
             </div>
             
             {/* Overspending Finding */}

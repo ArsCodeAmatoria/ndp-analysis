@@ -18,6 +18,8 @@ const OrganizedCrimeNetworkChart = dynamic(() => import('@/components/charts/Org
 const ChurchBurningsChart = dynamic(() => import('@/components/charts/ChurchBurningsChart'), { ssr: false });
 const MentalHealthChart = dynamic(() => import('@/components/charts/MentalHealthChart'), { ssr: false });
 const OverspendingChart = dynamic(() => import('@/components/charts/OverspendingChart'), { ssr: false });
+const ReconciliationClaimsChart = dynamic(() => import('@/components/charts/ReconciliationClaimsChart'), { ssr: false });
+const ReconciliationSpendingChart = dynamic(() => import('@/components/charts/ReconciliationSpendingChart'), { ssr: false });
 
 export function CrimeChartSection() {
   return (
@@ -461,6 +463,99 @@ export function OverspendingSection() {
           <div className="bg-gray-800 p-4 rounded-lg">
             <p className="mb-2 text-sm">Consultant spending increased from $0.9 billion in 2017 to $3.8 billion in 2023, with 42% of contracts awarded without competitive bidding processes.</p>
             <p className="text-xs text-gray-400">Source: BC Procurement Services, Freedom of Information Requests</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function ReconciliationSection() {
+  return (
+    <section className="mb-12" id="reconciliation-claims">
+      <h2 className="text-3xl font-bold mb-6">Truth in Reconciliation: Claims vs. Evidence</h2>
+      <p className="mb-6 text-gray-300">
+        Since 2021, claims of "mass graves" at former residential school sites have led to significant policy changes, 
+        funding allocations, and social upheaval. However, a critical examination of the evidence reveals concerning 
+        discrepancies between media narratives and verifiable facts.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">1,505</span>
+          <p className="text-gray-300">Claimed graves across residential school sites</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">0</span>
+          <p className="text-gray-300">Excavations conducted to verify claims</p>
+        </div>
+        <div className="bg-gray-900 p-6 rounded-lg text-center">
+          <span className="text-4xl font-bold text-orange-500 block mb-2">$587M</span>
+          <p className="text-gray-300">Government reconciliation spending in 2024</p>
+        </div>
+      </div>
+
+      {/* Reconciliation Claims Chart */}
+      <ReconciliationClaimsChart />
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Ground-Penetrating Radar Limitations</h3>
+          <p className="text-gray-300 mb-4">
+            The claims of unmarked graves are based primarily on ground-penetrating radar (GPR) surveys, which identify 
+            soil disturbances but cannot confirm the presence of human remains. Despite this technological limitation, 
+            media reports and government statements immediately characterized these findings as "confirmed graves" without 
+            forensic verification.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Dr. Sarah Beaulieu, who conducted the Kamloops GPR survey, stated: "We need to be clear that no bodies have been found... These are probable burials." Despite this clarification, media and government sources continued to reference "confirmed" graves.</p>
+            <p className="text-xs text-gray-400">Source: Canadian Archaeological Association, GPR Technical Reports</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Historical Context Omissions</h3>
+          <p className="text-gray-300 mb-4">
+            Historical records document student deaths at residential schools, primarily from diseases like tuberculosis 
+            that affected all Canadians during that era. However, these deaths were typically recorded, reported to families, 
+            and burials were conducted according to the practices of the time, not in "mass graves" as often characterized.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">The National Centre for Truth and Reconciliation has documented approximately 4,100 student deaths across all residential schools over their entire operation (1880s-1996), with tuberculosis as the leading cause—a disease that affected all Canadian communities during this period.</p>
+            <p className="text-xs text-gray-400">Source: National Centre for Truth and Reconciliation Records</p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Reconciliation Spending Chart */}
+      <div className="mt-8">
+        <ReconciliationSpendingChart />
+      </div>
+      
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Policy Impact Without Verification</h3>
+          <p className="text-gray-300 mb-4">
+            The unverified claims have led to significant policy changes, including flag lowerings, monument removals, 
+            curriculum revisions, and massive funding allocations. However, minimal resources have been directed toward 
+            forensic verification of the claims that prompted these changes.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Since 2021, 237 statues and monuments have been removed or vandalized, 189 buildings renamed, and $1.69 billion allocated to reconciliation initiatives, while only 0.4% of this funding has been directed to archaeological verification.</p>
+            <p className="text-xs text-gray-400">Source: BC Ministry of Indigenous Relations, Heritage Canada</p>
+          </div>
+        </div>
+        
+        <div className="bg-gray-900 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Church Burnings Connection</h3>
+          <p className="text-gray-300 mb-4">
+            Following the grave claims in 2021, British Columbia experienced an unprecedented wave of church burnings 
+            and vandalism, with 68 churches damaged or destroyed that year alone. Government response to these attacks 
+            was notably delayed compared to other hate crimes.
+          </p>
+          <div className="bg-gray-800 p-4 rounded-lg">
+            <p className="mb-2 text-sm">Prime Minister Trudeau waited 12 days before addressing the church burnings, stating they were "understandable" before later acknowledging they were "unacceptable." By contrast, other religious hate incidents received same-day condemnation.</p>
+            <p className="text-xs text-gray-400">Source: Prime Minister's Office Press Releases, Media Response Analysis</p>
           </div>
         </div>
       </div>
