@@ -15,6 +15,16 @@ const nextConfig = {
   },
   // Removing the static export to allow client-side rendering
   // output: 'export',
+  
+  // Add experimental features
+  experimental: {
+    serverComponentsExternalPackages: [],
+  },
+  
+  // Add webpack configuration
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig; 
