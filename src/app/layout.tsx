@@ -46,6 +46,27 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="canonical" href="https://www.voideconomy.com" />
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* Critical styles for orange elements - inline for immediate loading */
+          header.bg-orange-600 {
+            background-color: oklch(.646 .222 41.116) !important; /* Custom darker orange using OKLCH */
+          }
+          .text-orange-500, .text-orange-600 {
+            color: #f97316 !important;
+          }
+          .border-orange-600 {
+            border-color: #f97316 !important;
+          }
+          .bg-orange-600 {
+            background-color: #f97316 !important;
+          }
+          .bg-orange-600\/20 {
+            background-color: rgba(249, 115, 22, 0.2) !important;
+          }
+          [stroke="#f97316"] {
+            stroke: #f97316 !important;
+          }
+        `}} />
       </head>
       <body className="bg-black text-white">
         {children}

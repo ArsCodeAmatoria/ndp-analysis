@@ -16,4 +16,11 @@ header.bg-orange-600 {
 }
 [stroke="#f97316"] {
   stroke: #f97316 !important;
+}
+
+/* Fallback for browsers that don't support OKLCH */
+@supports not (background-color: oklch(.646 .222 41.116)) {
+  header.bg-orange-600 {
+    background-color: #c2410c !important; /* Fallback to orange-700 */
+  }
 } 
