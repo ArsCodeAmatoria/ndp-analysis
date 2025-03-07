@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BC Policy Analysis</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+    .header {
+      background-color: #f97316;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .card {
+      background-color: #111827;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .accent {
+      color: #f97316;
+      font-weight: bold;
+    }
+    .footer {
+      background-color: #111827;
+      padding: 1.5rem;
+      text-align: center;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">BC Policy Analysis</h1>
+      <nav class="hidden md:block">
+        <ul class="flex space-x-6">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#key-findings" class="hover:underline">Key Findings</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container mx-auto p-4">
+    <section class="mb-12 text-center py-8">
+      <h2 class="text-4xl font-bold mb-4">BC Policy Failure Analysis</h2>
+      <p class="text-xl max-w-3xl mx-auto text-gray-300">
+        Data-driven analysis of policy failures in British Columbia under NDP governance, highlighting the need for accountability and reform.
+      </p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+      <a href="#crime-crisis" class="card flex items-center">
+        <span>Crime Crisis</span>
+      </a>
+      <a href="#immigration-impact" class="card flex items-center">
+        <span>Immigration Impact</span>
+      </a>
+      <a href="#drug-epidemic" class="card flex items-center">
+        <span>Drug Epidemic</span>
+      </a>
+      <a href="#gang-activity" class="card flex items-center">
+        <span>Gang Activity</span>
+      </a>
+      <a href="#housing-crisis" class="card flex items-center">
+        <span>Housing Crisis</span>
+      </a>
+      <a href="#healthcare-collapse" class="card flex items-center">
+        <span>Healthcare Collapse</span>
+      </a>
+      <a href="#church-burning-crisis" class="card flex items-center">
+        <span>Church Burnings</span>
+      </a>
+      <a href="#mental-health-crisis" class="card flex items-center">
+        <span>Mental Health Crisis</span>
+      </a>
+    </div>
+
+    <section class="mb-12" id="key-findings">
+      <h2 class="text-3xl font-bold mb-8 text-center">Key Findings</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Crime Surge</h3>
+          <p>Violent crime has increased by <span class="accent">37%</span> province-wide since the NDP took power in 2017</p>
+        </div>
+        
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Housing Crisis</h3>
+          <p>Housing costs have risen by <span class="accent">43%</span> while housing starts have declined by <span class="accent">12%</span></p>
+        </div>
+        
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Drug Epidemic</h3>
+          <p>BC has the highest rate of drug overdose deaths in Canada, with minimal improvement despite policy changes</p>
+        </div>
+        
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Organized Crime</h3>
+          <p>Organized crime groups have expanded operations amid relaxed enforcement policies</p>
+        </div>
+        
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Healthcare Delays</h3>
+          <p>Healthcare wait times have increased by <span class="accent">41%</span> for essential surgeries and procedures</p>
+        </div>
+        
+        <div class="card border-l-4 border-orange-600">
+          <h3 class="text-xl font-semibold mb-2">Church Burnings</h3>
+          <p>Church burnings and vandalism increased by <span class="accent">467%</span> in 2021 with minimal government response</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container mx-auto">
+      <p class="mb-4">© 2024 BC Policy Analysis. All rights reserved.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="hover:text-white">Privacy Policy</a>
+        <a href="#" class="hover:text-white">Terms of Use</a>
+        <a href="#" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 
