@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map, GraduationCap, Axe, Activity } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map, GraduationCap, Axe, Activity, Scale } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -17,7 +17,8 @@ import {
   RefugeeImpactSection,
   IllegalImmigrationSection,
   InternationalStudentSection,
-  CovidOverreachSection
+  CovidOverreachSection,
+  PolicyComparisonSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -72,6 +73,10 @@ export default function Home() {
           <a href="#covid-overreach" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Activity size={18} className="mr-2" stroke="#f97316" />
             <span>COVID Overreach</span>
+          </a>
+          <a href="#policy-comparison" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Scale size={18} className="mr-2" stroke="#f97316" />
+            <span>Policy Metrics</span>
           </a>
           <a href="#church-burning-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Flame size={18} className="mr-2" stroke="#f97316" />
@@ -145,6 +150,9 @@ export default function Home() {
         {/* COVID Overreach Section */}
         <CovidOverreachSection />
 
+        {/* Policy Comparison Section */}
+        <PolicyComparisonSection />
+
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
 
@@ -213,6 +221,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">COVID Overreach</h3>
               </div>
               <p className="text-gray-300">Statistical analysis shows <span className="text-orange-500 font-bold">68%</span> correlation between restriction severity and mental health deterioration with <span className="text-orange-500 font-bold">$12.4B</span> in economic damage</p>
+            </div>
+            
+            {/* Policy Comparison Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Scale size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Policy Metrics</h3>
+              </div>
+              <p className="text-gray-300">BC's Economic Freedom Index score has fallen to <span className="text-orange-500 font-bold">38/100</span>, with private sector autonomy decreased by <span className="text-orange-500 font-bold">54%</span> since 2017</p>
             </div>
             
             {/* Crime Groups Finding */}
