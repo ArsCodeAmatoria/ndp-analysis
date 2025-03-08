@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "../styles/globals.css";
@@ -9,6 +9,10 @@ const inter = Inter({
   display: "swap",
   variable: "--font-inter",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#f97316",
+};
 
 export const metadata: Metadata = {
   title: "BC Policy Analysis | Data-Driven Insights on NDP Governance",
@@ -41,7 +45,6 @@ export const metadata: Metadata = {
     apple: { url: '/apple-touch-icon.png' },
   },
   manifest: '/manifest.json',
-  themeColor: '#f97316',
 };
 
 export default function RootLayout({
