@@ -17,42 +17,18 @@ const nextConfig = {
   // Removing the static export to allow client-side rendering
   // output: 'export',
   
-  // Add experimental features
+  // Simplified experimental features
   experimental: {
-    serverComponentsExternalPackages: [],
-    isrMemoryCacheSize: 0, // Disable ISR cache completely
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/@swc/core-linux-x64-gnu',
-        'node_modules/@swc/core-linux-x64-musl',
-        'node_modules/@esbuild/linux-x64',
-      ],
-    },
+    // Remove isrMemoryCacheSize as it might be causing issues
+    optimizeCss: true, // Enable CSS optimization
   },
   
-  // Add webpack configuration
+  // Simplified webpack configuration
   webpack: (config) => {
     // Optimize the webpack configuration
     config.watchOptions = {
       ...config.watchOptions,
       ignored: /node_modules/,
-    };
-    
-    // Increase max limit for call stack
-    config.optimization = {
-      ...config.optimization,
-      minimize: true,
-    };
-    
-    // Add support for Framer Motion
-    config.module = {
-      ...config.module,
-      rules: config.module.rules.concat([
-        {
-          test: /framer-motion/,
-          sideEffects: false
-        }
-      ])
     };
     
     return config;
@@ -92,7 +68,16 @@ const nextConfig = {
   reactStrictMode: true,
   
   // Ensure SSR compatibility with animations
-  transpilePackages: ["framer-motion"]
+  transpilePackages: ["framer-motion", "chart.js", "react-chartjs-2"],
+  
+  // Disable server-side rendering for problematic components
+  compiler: {
+    // Enables the styled-components SWC transform
+    styledComponents: true
+  },
+  
+  // Disable source maps in production to reduce memory usage
+  productionBrowserSourceMaps: false,
 };
 
 export default nextConfig; 
