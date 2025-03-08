@@ -27,6 +27,18 @@ const nextConfig = {
   
   // Disable source maps in production to reduce memory usage
   productionBrowserSourceMaps: false,
+  
+  // Fix for Maximum call stack size exceeded error
+  experimental: {
+    // Disable build traces collection which is causing the stack overflow
+    outputFileTracingRoot: null,
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/**/*',
+        '.next/**/*',
+      ],
+    },
+  },
 };
 
 export default nextConfig;
