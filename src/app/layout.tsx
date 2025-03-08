@@ -38,13 +38,10 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon.svg', type: 'image/svg+xml' }
-    ],
-    apple: { url: '/apple-touch-icon.png' },
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
-  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
