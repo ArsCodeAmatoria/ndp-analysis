@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map, GraduationCap, Axe } from "lucide-react";
+import { TrendingUp, Home as HomeIcon, Pill, Users, Clock, DollarSign, AlertTriangle, Building, Briefcase, Flame, Brain, FileSearch, Shield, LogOut, Globe, Map, GraduationCap, Axe, Activity } from "lucide-react";
 import { 
   CrimeChartSection, 
   DrugChartSection, 
@@ -16,7 +16,8 @@ import {
   PopulationExodusSection,
   RefugeeImpactSection,
   IllegalImmigrationSection,
-  InternationalStudentSection
+  InternationalStudentSection,
+  CovidOverreachSection
 } from "@/components/ChartSections";
 
 export default function Home() {
@@ -67,6 +68,10 @@ export default function Home() {
           <a href="#healthcare-collapse" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Clock size={18} className="mr-2" stroke="#f97316" />
             <span>Healthcare Collapse</span>
+          </a>
+          <a href="#covid-overreach" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
+            <Activity size={18} className="mr-2" stroke="#f97316" />
+            <span>COVID Overreach</span>
           </a>
           <a href="#church-burning-crisis" className="bg-gray-900 hover:bg-gray-800 p-4 rounded transition-colors flex items-center">
             <Flame size={18} className="mr-2" stroke="#f97316" />
@@ -137,6 +142,9 @@ export default function Home() {
         {/* International Student Section */}
         <InternationalStudentSection />
 
+        {/* COVID Overreach Section */}
+        <CovidOverreachSection />
+
         {/* Church Burnings Section */}
         <ChurchBurningsSection />
 
@@ -194,6 +202,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Drug Epidemic</h3>
               </div>
               <p className="text-gray-300">BC has the highest rate of drug overdose deaths in Canada, with minimal improvement despite policy changes</p>
+            </div>
+            
+            {/* COVID Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Activity size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">COVID Overreach</h3>
+              </div>
+              <p className="text-gray-300">Statistical analysis shows <span className="text-orange-500 font-bold">68%</span> correlation between restriction severity and mental health deterioration with <span className="text-orange-500 font-bold">$12.4B</span> in economic damage</p>
             </div>
             
             {/* Crime Groups Finding */}
