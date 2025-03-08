@@ -20,6 +20,14 @@ const nextConfig = {
   // Add experimental features
   experimental: {
     serverComponentsExternalPackages: [],
+    isrMemoryCacheSize: 0, // Disable ISR cache completely
+    outputFileTracingExcludes: {
+      '*': [
+        'node_modules/@swc/core-linux-x64-gnu',
+        'node_modules/@swc/core-linux-x64-musl',
+        'node_modules/@esbuild/linux-x64',
+      ],
+    },
   },
   
   // Add webpack configuration
@@ -69,6 +77,9 @@ const nextConfig = {
   
   // Configure build output directory
   distDir: '.next',
+  
+  // Simplify the output to minimize trace collection issues
+  output: 'standalone',
 };
 
 export default nextConfig; 
