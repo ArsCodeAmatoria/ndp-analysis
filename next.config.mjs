@@ -75,9 +75,6 @@ const nextConfig = {
   
   // Configure build output directory
   distDir: '.next',
-  
-  // Simplify the output to minimize trace collection issues
-  output: 'standalone',
 };
 
 export default nextConfig; 
