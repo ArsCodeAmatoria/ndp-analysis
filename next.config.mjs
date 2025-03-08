@@ -41,7 +41,6 @@ const nextConfig = {
     // Increase max limit for call stack
     config.optimization = {
       ...config.optimization,
-      nodeEnv: 'production',
       minimize: true,
     };
     
