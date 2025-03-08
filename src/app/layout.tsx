@@ -53,6 +53,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
         <link rel="canonical" href="https://www.voideconomy.com" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <style dangerouslySetInnerHTML={{ __html: `
           /* Critical styles for orange elements - inline for immediate loading */
           header.bg-orange-600 {

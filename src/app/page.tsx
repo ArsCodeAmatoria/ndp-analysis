@@ -24,10 +24,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-black text-white">
       <header className="bg-orange-600 text-white p-4 sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center">
-            <Axe className="mr-2" size={24} color="#ffffff" />
-            <h1 className="text-2xl font-bold">BC Policy Analysis</h1>
-          </div>
+          <h1 className="text-2xl font-bold">BC Policy Analysis</h1>
           <nav className="hidden md:block">
             <ul className="flex space-x-6">
               <li><a href="#" className="hover:underline">Home</a></li>
@@ -285,6 +282,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold">Population Exodus</h3>
               </div>
               <p className="text-gray-300">BC has lost <span className="text-orange-500 font-bold">90,100+</span> residents to other provinces since 2019, with <span className="text-orange-500 font-bold">4,800+</span> businesses closing or relocating</p>
+            </div>
+
+            {/* Refugee Impact Finding */}
+            <div className="bg-gray-900 rounded-lg p-6 border-l-4 border-orange-600 hover:bg-gray-800 transition-colors">
+              <div className="flex items-start mb-4">
+                <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
+                  <Globe size={24} stroke="#f97316" />
+                </div>
+                <h3 className="text-xl font-semibold">Refugee Burdens</h3>
+              </div>
+              <p className="text-gray-300">Refugee claimants have a <span className="text-orange-500 font-bold">74%</span> unemployment rate, costing taxpayers <span className="text-orange-500 font-bold">$298M</span> annually with minimal integration success</p>
             </div>
 
             {/* Illegal Immigration Finding */}
