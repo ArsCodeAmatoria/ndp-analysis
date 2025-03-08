@@ -12,6 +12,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['www.voideconomy.com'],
   },
   // Removing the static export to allow client-side rendering
   // output: 'export',
