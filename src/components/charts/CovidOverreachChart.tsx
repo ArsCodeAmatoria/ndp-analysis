@@ -14,6 +14,7 @@ import {
 } from 'chart.js';
 import { Line, Bar } from 'react-chartjs-2';
 import { BarChart, LineChart } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Register ChartJS components
 ChartJS.register(
@@ -31,6 +32,9 @@ ChartJS.register(
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+  animation: {
+    duration: 1000,
+  },
   plugins: {
     legend: {
       position: 'top' as const,
@@ -110,50 +114,147 @@ const barChartData = {
   ],
 };
 
+// Motion animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1,
+    transition: { 
+      duration: 0.5,
+      when: "beforeChildren",
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { 
+    y: 0, 
+    opacity: 1,
+    transition: { type: "spring", stiffness: 300, damping: 24 }
+  }
+};
+
+const chartVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" }
+  },
+  exit: { 
+    opacity: 0, 
+    scale: 0.9,
+    transition: { duration: 0.3 }
+  }
+};
+
 export default function CovidOverreachChart() {
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
+  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
 
   return (
-    <div className="bg-gray-900 p-6 rounded-lg">
+    <motion.div 
+      className="bg-gray-900 p-6 rounded-lg"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold">COVID Policy Restriction Impact (2020-2022)</h3>
-        <div className="flex space-x-2">
-          <button 
+        <motion.h3 
+          className="text-xl font-semibold"
+          variants={itemVariants}
+        >
+          COVID Policy Restriction Impact (2020-2022)
+        </motion.h3>
+        <motion.div 
+          className="flex space-x-2"
+          variants={itemVariants}
+        >
+          <motion.button 
             className={`p-2 rounded hover:bg-gray-700 ${chartType === 'line' ? 'bg-gray-700' : 'bg-gray-800'}`}
             onClick={() => setChartType('line')}
             aria-label="Show line chart"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <LineChart size={20} />
-          </button>
-          <button 
+          </motion.button>
+          <motion.button 
             className={`p-2 rounded hover:bg-gray-700 ${chartType === 'bar' ? 'bg-gray-700' : 'bg-gray-800'}`}
             onClick={() => setChartType('bar')}
             aria-label="Show bar chart"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
             <BarChart size={20} />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </div>
-      <div className="h-64">
-        {chartType === 'line' ? (
-          <Line options={options} data={lineChartData} />
-        ) : (
-          <Bar options={options} data={barChartData} />
-        )}
-      </div>
-      <div className="mt-6 bg-gray-800 p-4 rounded-lg">
-        <h4 className="font-bold mb-2 text-orange-500">Key Insights:</h4>
+      
+      <motion.div 
+        className="h-64"
+        variants={itemVariants}
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={chartType}
+            variants={chartVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="h-full"
+          >
+            {chartType === 'line' ? (
+              <Line options={options} data={lineChartData} />
+            ) : (
+              <Bar options={options} data={barChartData} />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+      
+      <motion.div 
+        className="mt-6 bg-gray-800 p-4 rounded-lg"
+        variants={itemVariants}
+      >
+        <motion.h4 
+          className="font-bold mb-2 text-orange-500"
+          variants={itemVariants}
+        >
+          Key Insights:
+        </motion.h4>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
-          <li>Strong positive correlation (72%) between restriction severity and unemployment rates</li>
-          <li>Strong positive correlation (68%) between restriction severity and mental health distress</li>
-          <li>Small businesses experienced 3.7x greater negative economic impact than large corporations</li>
-          <li>183% increase in opioid-related deaths during peak restriction periods</li>
+          {[
+            "Strong positive correlation (72%) between restriction severity and unemployment rates",
+            "Strong positive correlation (68%) between restriction severity and mental health distress",
+            "Small businesses experienced 3.7x greater negative economic impact than large corporations",
+            "183% increase in opioid-related deaths during peak restriction periods"
+          ].map((item, index) => (
+            <motion.li 
+              key={index}
+              variants={itemVariants}
+              onHoverStart={() => setHoveredItem(index)}
+              onHoverEnd={() => setHoveredItem(null)}
+              animate={{ 
+                color: hoveredItem === index ? 'rgba(249, 115, 22, 0.9)' : 'rgb(209 213 219)',
+                transition: { duration: 0.3 }
+              }}
+            >
+              {item}
+            </motion.li>
+          ))}
         </ul>
-      </div>
-      <p className="text-sm text-gray-400 mt-4">
+      </motion.div>
+      
+      <motion.p 
+        className="text-sm text-gray-400 mt-4"
+        variants={itemVariants}
+      >
         Source: BC Health Authority Data, Statistics Canada, Census Data 2021
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 }
 

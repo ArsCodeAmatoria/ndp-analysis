@@ -44,6 +44,17 @@ const nextConfig = {
       minimize: true,
     };
     
+    // Add support for Framer Motion
+    config.module = {
+      ...config.module,
+      rules: config.module.rules.concat([
+        {
+          test: /framer-motion/,
+          sideEffects: false
+        }
+      ])
+    };
+    
     return config;
   },
 
@@ -76,6 +87,12 @@ const nextConfig = {
   
   // Configure build output directory
   distDir: '.next',
+
+  // Enable strict mode for React
+  reactStrictMode: true,
+  
+  // Ensure SSR compatibility with animations
+  transpilePackages: ["framer-motion"]
 };
 
 export default nextConfig; 

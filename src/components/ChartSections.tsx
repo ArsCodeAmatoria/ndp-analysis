@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { Users, Building, Globe, DollarSign, Home as HomeIcon, Briefcase, Map, AlertTriangle, GraduationCap, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Dynamically import chart components with no SSR
 const CrimeChart = dynamic(() => import('@/components/charts/CrimeChart'), { ssr: false });
@@ -1275,34 +1276,88 @@ export function InternationalStudentSection() {
 // Add the new COVID Overreach section
 export function CovidOverreachSection() {
   return (
-    <section className="mb-12" id="covid-overreach">
-      <h2 className="text-3xl font-bold mb-6">COVID Policy Overreach Analysis</h2>
-      <p className="mb-6 text-gray-300">
+    <motion.section 
+      className="mb-12" 
+      id="covid-overreach"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.h2 
+        className="text-3xl font-bold mb-6"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        COVID Policy Overreach Analysis
+      </motion.h2>
+      
+      <motion.p 
+        className="mb-6 text-gray-300"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         Statistical analysis of British Columbia's COVID-19 policy response reveals concerning correlations between restriction severity and negative socioeconomic outcomes, with minimal evidence supporting the efficacy of the most restrictive measures.
-      </p>
+      </motion.p>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div className="bg-gray-900 p-6 rounded-lg text-center">
+      <motion.div 
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <motion.div 
+          className="bg-gray-900 p-6 rounded-lg text-center"
+          whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <span className="text-4xl font-bold text-orange-500 block mb-2">68%</span>
           <p className="text-gray-300">Correlation between restriction severity and mental health deterioration</p>
-        </div>
-        <div className="bg-gray-900 p-6 rounded-lg text-center">
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-900 p-6 rounded-lg text-center"
+          whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <span className="text-4xl font-bold text-orange-500 block mb-2">$12.4B</span>
           <p className="text-gray-300">Economic damage from excessive lockdown policies</p>
-        </div>
-        <div className="bg-gray-900 p-6 rounded-lg text-center">
+        </motion.div>
+        
+        <motion.div 
+          className="bg-gray-900 p-6 rounded-lg text-center"
+          whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
           <span className="text-4xl font-bold text-orange-500 block mb-2">+46%</span>
           <p className="text-gray-300">Increase in substance abuse during prolonged restrictions</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="bg-gray-900 p-6 rounded-lg mb-8">
+      <motion.div 
+        className="bg-gray-900 p-6 rounded-lg mb-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         <h3 className="text-xl font-bold mb-4">Policy Impact Analysis</h3>
         <p className="mb-4 text-gray-300">
           Regression analysis of BC's COVID policies reveals concerning trends in how restriction severity correlated with negative outcomes across multiple sectors. Data demonstrates that many of the most restrictive policies produced severe collateral damage while offering questionable public health benefits.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border-l-4 border-orange-600 pl-4">
+          <motion.div 
+            className="border-l-4 border-orange-600 pl-4"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             <h4 className="font-bold mb-2">Economic Impacts</h4>
             <ul className="list-disc list-inside text-gray-300">
               <li>Small businesses lost 41% of revenue during peak restrictions</li>
@@ -1310,8 +1365,15 @@ export function CovidOverreachSection() {
               <li>Middle and lower income families disproportionately impacted</li>
               <li>Tourism and hospitality sectors lost 36,500 jobs</li>
             </ul>
-          </div>
-          <div className="border-l-4 border-orange-600 pl-4">
+          </motion.div>
+          
+          <motion.div 
+            className="border-l-4 border-orange-600 pl-4"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <h4 className="font-bold mb-2">Social & Health Costs</h4>
             <ul className="list-disc list-inside text-gray-300">
               <li>12% increase in domestic violence reports</li>
@@ -1319,15 +1381,28 @@ export function CovidOverreachSection() {
               <li>39% decrease in cancer screenings during 2020-2021</li>
               <li>183% increase in opioid-related deaths (2019-2021)</li>
             </ul>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Client-side only rendering of regression chart */}
-      <CovidOverreachChart />
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7, delay: 0.7 }}
+      >
+        <CovidOverreachChart />
+      </motion.div>
 
       {/* Statistical Findings Section */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 mb-8">
+      <motion.div 
+        className="bg-gradient-to-r from-gray-900 to-gray-800 p-8 rounded-lg shadow-lg border border-gray-700 mb-8"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
         <div className="flex items-center mb-6">
           <div className="bg-orange-600/20 p-3 rounded-lg mr-4">
             <Activity size={24} stroke="#f97316" />
@@ -1336,28 +1411,43 @@ export function CovidOverreachSection() {
         </div>
         
         <div className="space-y-6">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+          >
             <h4 className="text-xl font-semibold text-orange-500 mb-2">Policy Effectiveness vs. Collateral Damage</h4>
             <p className="text-gray-300">
               Multiple regression analysis comparing BC's approach to jurisdictions with less restrictive policies shows minimal statistical difference in COVID mortality outcomes (p=0.08), while demonstrating significant negative correlations with economic, mental health, and educational outcomes (p&lt;0.001).
             </p>
-          </div>
+          </motion.div>
           
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+          >
             <h4 className="text-xl font-semibold text-orange-500 mb-2">Proportionality Analysis</h4>
             <p className="text-gray-300">
               Cost-benefit analysis reveals that each month of broad restrictions cost approximately $1.2B in economic damage, 2,800 jobs, and contributed to a 4.6% increase in serious mental health conditions. These costs were disproportionate to the marginal benefits when compared to targeted protection strategies.
             </p>
-          </div>
+          </motion.div>
           
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+          >
             <h4 className="text-xl font-semibold text-orange-500 mb-2">Policy Recommendations</h4>
             <p className="text-gray-300">
               Statistical evidence supports a targeted protection approach focused on vulnerable populations rather than broad societal restrictions. For future public health events, data supports maintaining educational, economic, and social functioning while implementing enhanced protection for high-risk groups.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
