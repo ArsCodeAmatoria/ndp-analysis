@@ -32,7 +32,16 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  }
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: { url: '/apple-touch-icon.png' },
+  },
+  manifest: '/manifest.json',
+  themeColor: '#f97316',
 };
 
 export default function RootLayout({
