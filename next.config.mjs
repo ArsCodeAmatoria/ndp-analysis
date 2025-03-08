@@ -24,6 +24,19 @@ const nextConfig = {
   
   // Add webpack configuration
   webpack: (config) => {
+    // Optimize the webpack configuration
+    config.watchOptions = {
+      ...config.watchOptions,
+      ignored: /node_modules/,
+    };
+    
+    // Increase max limit for call stack
+    config.optimization = {
+      ...config.optimization,
+      nodeEnv: 'production',
+      minimize: true,
+    };
+    
     return config;
   },
 
@@ -53,6 +66,9 @@ const nextConfig = {
       },
     ];
   },
+  
+  // Configure build output directory
+  distDir: '.next',
 };
 
 export default nextConfig; 
